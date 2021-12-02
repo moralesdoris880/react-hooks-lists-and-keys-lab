@@ -6,9 +6,18 @@ function ProjectList({ projects }) {
   return (
     <div id="projects">
       <h2>My Projects</h2>
-      <div id="project-list">{/* render ProjectItem components here */}</div>
+      <div id="project-list">{addId(projects)}</div>
     </div>
   );
 }
+
+const addId=(projects)=>{return (projects.map(project=>{return <ProjectItem
+  id={project.id}
+  name={project.name}
+  about={project.about}
+  technologies={project.technologies}
+/>}))}
+
+
 
 export default ProjectList;
